@@ -1,0 +1,38 @@
+from calibre.web.feeds.news import BasicNewsRecipe
+
+class CLSHot(BasicNewsRecipe):
+    title = 'CLS 热榜'
+    oldest_article = 7
+    max_articles_per_feed = 50
+    language = 'zh'
+    encoding = 'utf-8'
+
+    # RSS 源
+    feeds = [
+        ('CLS 热榜', 'https://rsshub.app/cls/hot')
+    ]
+
+    # 自定义样式（可选）
+    extra_css = '''
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    '''
+
+    # 预处理 HTML（可选）
+    def preprocess_html(self, soup):
+        # 示例：移除不必要的广告或干扰内容
+        for ad in soup.find_all(class_='ads'):
+            ad.decompose()
+        return soup
