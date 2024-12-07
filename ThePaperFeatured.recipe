@@ -9,7 +9,7 @@ class ThePaperFeatured(BasicNewsRecipe):
 
     # RSS 源
     feeds = [
-        ('澎湃新闻 - 首页头条', 'https://rsshub.app/thepaper/featured')
+        ('澎湃新闻 - 首页头条', 'https://feedx.net/read?r=thepaper')
     ]
 
     # 自定义样式（可选）
