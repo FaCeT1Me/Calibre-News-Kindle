@@ -1,3 +1,3 @@
-zaobao.com
-mainichi_en.com
-mainichi_science_news.com
+zaobao.recipe
+mainichi_en.recipe
+mainichi_science_news.recipe
